@@ -1,422 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js" lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial;
-background-color:  #4d4d4d;
-color: white;
-}
-
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: 0.4s;
-}
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .accordion:hover {
-  background-color: #ccc;
-}
-
-/* Style the accordion panel. Note: hidden by default */
-.panel {
-  padding: 0 18px;
-  background-color: #737373;
-  display: none;
-  overflow: hidden;
-}.accordion:after {
-  content: '(+)';
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-}
-
-.mySlides1 {
-	display:none
-}
-
-/* Style the tab */
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-/* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-}
-
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
-}
-
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-.tabcontent {
-  animation: fadeEffect 2s; /* Fading effect takes 1 second */
-}
-
-/* Go from zero to full opacity */
-@keyframes fadeEffect {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-</style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+	<link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
+                <a href="#education">Education</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
 
-<h2>Portfolio</h2>
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Jack Wartell</h1>
+            <h2>B.Sc. Computer Science</h2>
+            <!-- <h2>M.Sc. Electrical & Computer Engineering*</h2> -->
+            <p>
+                <a href="https://github.com/fallenlogic"><i class="fa fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jack-m-wartell/"><i class="fa fa-linkedin"></i></a>
+            </p>
+        </div>
 
-<div class="tab">
-  <button class="tablinks" onclick="openMenu(event, 'Software')" id="SoftwareOpen">Software Engineering</button>
-  <button class="tablinks" onclick="openMenu(event, 'Electronics')">Electronics</button>
-  <button class="tablinks" onclick="openMenu(event, '3DDesign')">3D and Environmental Design</button>
-</div>
+        <!-- End #lead-content -->
 
-<div id="Software" class="tabcontent">
-  <h3>Education</h3>
-  <p><i>Bachelor of Science in Computer Science</i> - Christopher Newport University </p>
-  
-  <h3>Selected software projects:</h3>
+        <div id="lead-overlay"></div>
 
-<button class="accordion">Dynamic Team Orienteering Problem (C++, Java, Python)</button>
-<div class="panel">
-  <p>The Dynamic Team Orienteering Problem is a routing problem featuring multiple 'vehicles', where all nodes are not known <i>a priori</i>. 
-	The nodes (locations to visit) are revealed as time passes, and all vehicles are not dispatched at the same time. 
-	For a full problem definition, see [Kirac, Milburn and Gedik]. 
-	This code is designed to help solve and verify solutions to the DTOP.</p>
-	<a>GitHub repo available upon completion of my Research Apprenticeship.</a>
-</div>
-<br><br>
-<button class="accordion">ezPaint Blender add-on (Python)</button>
-<div class="panel">
-  <p>This add-on arose from the repetitive nature of weightpainting models from one engine for another. 
-	Because this was a tedious, error-prone task, I wrote code to automatically redo the weights of one model given the game it was from.
-	As of right now, this software supports reweighting Star Wars: The Old Republic, Jedi: Fallen Order, Jedi Knight, Battlefront, and Destiny 2 rigs.
-	The default output is ValveBiped (for the Source Engine), but it also allows custom mappings.</p>
-	<a href="https://github.com/FallenLogic/ezPaint" style="color:white;">Download ezPaint here!</a>
-</div>
-<br><br>
-<button class="accordion">CNU Maps (Python, Java)</button>
-<div class="panel">
-  <p>Incoming transfer or first-year students may not know the way around CNU's campus, but there was no official Google Maps-like app for on-campus navigation. 
-	CNU Maps helps solve that problem by providing a simple Android app that can display paths between commonly visited locations, along with dining hall menus.</p>
-	<a href="https://play.google.com/store/apps/details?id=com.cnuacm.helloworld&pli=1" style="color:white;">Get CNU Maps here!</a>
-</div> 
-<br><br>
-<button class="accordion">Senior Capstone (Python)</button>
-<div class="panel">
-  <p>My Senior Capstone project: a computer-aided 3D map generation tool for Valve's Source Engine. 
-	The output is in the proprietary VMF format.</p>
-  <a>Link will be here soon!</a>
-</div> 
-<br><br>
-<button class="accordion">Augmented Reality Lightsaber Motion Tracking (Python, C)</button>
-<div class="panel">
-  <p>I wanted to use a prop lightsaber as a video game controller. Through a combination of OpenCV tracking, AI pose detection, and some trigonometry, 
-	a webcam feed of a person moving a prop saber that's a specific color can now be used to manipulate the player's skeleton in certain games. 
-	Movements can be translated and used in games. Tested with Garry's Mod. 
-	This repository also includes scripts for activating a servo for an Arduino based on color detection, and loading saber movement data from a file through Lua. </p>
-  <a href="https://github.com/FallenLogic/LightsaberMotionTracking" style="color:white">Try it out here!</a>
-</div> 
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
 
-</div>
+    <div id="about">
+        <div class="container">
+            <h2 class="heading">About Me</h2>
+            <p>
+                I'm a software engineer with a strong background in embedded systems. I consider myself a lifelong learner!
+            </p><br>
+            <p>
+                I have implemented software for flight tests and embedded systems for space navigation, and performed test equipment automation (including design and implementation of graphical interfaces). I have also conducted historiographic research!
+                I work for Psionic, Inc. - a startup in Hampton, VA, where we're developing next-generation LiDAR systems for GNSS-denied environments.
+            </p><br>
+            <!-- <p>
+                *I am enrolled in Master of Science in Electrical and Computer Engineering from the University of Colorado Boulder, and hold a Bachelor of Science in Computer Science from Christopher Newport University.
+            </p> -->
+        </div>
+    </div>
+    <!-- End #about -->
 
-<div id="Electronics" class="tabcontent">
-  <h3>Selected electronics projects:</h3> 
-  
-  <button class="accordion">Portable Nintendo 64</button>
-<div class="panel">
-  <p>The Nintendo 64 was released in 1996 in North America as a home console. 
-	Taking it on the go in the 1990s wouldn't have been possible, but it is today, largely thanks to the BitBuilt and ModRetro forums.
-	With custom voltage regulators and a battery charging system (and dozens of wires to the relocated cartridge slot), 
-	this device lets you play all original N64 games with 100% compatibility. This also features 3D printed button slots and a speaker cover.</p>
-	<a><img src="https://bitbuilt.net/forums/index.php?attachments/20220722_223825-jpg.23777/" style = "width:100%"></img></a>
-	<a><img src="https://bitbuilt.net/forums/index.php?attachments/20220722_214316-1-jpg.23779/" style = "width:100%"></img></a>
-</div>
-<br><br>
-<button class="accordion">Singing Fish</button>
-<div class="panel">
-  <p>The Big Mouth Billy Bass was created by the Gemmy Corporation in the 1990s. 
-	In 2023, CNU students (including myself) decided to vastly improve it by creating a new internal servo system,
-	and linking it to a webserver so that any song uploaded can be played, with the fish's movement synchronized. 
-	This leverages AI audio processing to detect phonemes, an embedded Raspberry Pi to control movement, 
-	and will include a DBMS for storage.</p>
-	<video controls>
-	<source src="https://cdn.discordapp.com/attachments/1092795501566505002/1224805894034952303/fish_overlay.mp4?ex=661ed460&is=660c5f60&hm=adfa71eb8a489a59281101531b8c4ec60cbbb7c3ee76fbb448b9160000319ecb&" type="video/mp4">
-	<class = "center">
-	</video>
-</div>
-<br><br>
-</div>
-</div>
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="Ongoing">
+                <h3>Psionic, Inc.</h3>
+                <h4>Software Engineer</h4>
+                <p>
+                    
+                 </p>
+            </div>
 
-<div id="3DDesign" class="tabcontent">
-  <h3 style="text-align:center;">3D Projects</h3>
-  <p style="text-align:center;">Selected 3D projects.</p>
-  
-   <!-- Slideshow container -->
-	<div class="slideshow-container">
+            <div data-date="2023 – 2024">
+                <h3>Christopher Newport University</h3>
+                <h4>Research Apprentice</h4>
+                <p>
+                    
+                 </p>
+            </div>
 
-	  <!-- Full-width images with number and caption text -->
-	  <div class="mySlides fade">
-		<div class="numbertext">1 / 6</div>
-		<img src="https://steamuserimages-a.akamaihd.net/ugc/1653349811969246336/D3EA83B32CCFA50F1B17E4E7EB5DE4942ACA7854/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" style="width:100%">
-		<div class="text">Vardos (Star Wars) Courtyard</div>
-	  </div>
+            <div data-date="2022">
+                <h3>NASA Langley Research Center</h3>
+                <h4>Software Development Intern</h4>
+                <p>
 
-	  <div class="mySlides fade">
-		<div class="numbertext">2 / 6</div>
-		<img src="https://steamuserimages-a.akamaihd.net/ugc/1653349811969248446/2358418FF1EAABE3DC75E660C8B6D03034B4FFE9/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" style="width:100%">
-		<div class="text">Vardos (Star Wars) Shops</div>
-	  </div>
+                 </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
 
-	  <div class="mySlides fade">
-		<div class="numbertext">3 / 6</div>
-		<img src="https://steamuserimages-a.akamaihd.net/ugc/1653350443180508682/7297C4CB75C238F62DC417A7765A9616BB5037C5/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" style="width:100%">
-		<div class="text">Vardos (Star Wars) Hangar</div>
-	  </div>
-	  
-	  <div class="mySlides fade">
-		<div class="numbertext">4 / 6</div>
-		<img src="https://storage.ko-fi.com/cdn/useruploads/display/cd5c536a-b019-45be-8b37-249bfa79f0e3_camera.png" style="width:100%">
-		<div class="text" style="color:black">Highpoly Camera</div>
-	  </div>
-	  
-	  <div class="mySlides fade">
-		<div class="numbertext">5 / 6</div>
-		<img src="https://steamuserimages-a.akamaihd.net/ugc/1653350875924673628/00EF304A8B8F4E84C822918712A9CCA699DFCAEA/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" style="width:100%">
-		<div class="text" style="color:black">Repainted TIE Fighter</div>
-	  </div>
-	  
-	  <div class="mySlides fade">
-		<div class="numbertext">6 / 6</div>
-		<img src="https://storage.ko-fi.com/cdn/useruploads/display/jpg_kofi_73864d3f-15cc-4b01-8058-50254a7c2030floor2f.jpg" style="width:100%">
-		<div class="text">Realistic remake of Luigi's Mansion (2F)</div>
-	  </div>
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        
+        <!-- <div class="education-block">
+            <h3>University of Colorado Boulder</h3>
+            <span class="education-date">2024 - </span>
+            <h4>Master of Science in Electrical and Computer Engineering</h4>
+            <h4>Concentration in Industrial Internet of Things</h4>
+            <p>
+                My graduate-level classes include advanced digital signal processing, power electronics, and Industrial IoT programming.
+            </p><br>
+        </div> -->
 
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br>
+        <!-- End .education-block -->
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
-</div>
+        <div class="education-block">
+            <h3>Christopher Newport University</h3>
+            <span class="education-date">2020 - 2024</span>
+            <h4>Bachelor of Science in Computer Science</h4>
+            <h4>Minor in Leadership Studies</h4>
+             <p>
+                Undergraduate classes included digital logic design, applied artificial intelligence, operating systems, and cryptography.
+             </p><br>
+             <h4>Honors Program & President's Leadership Program</h4>
+             <p>
+                I was also a member of the Honors program, which allowed me to participate in undergraduate research, and the President's Leadership Program.
+                I was briefly the Vice Chair of my university's ACM chapter.
+             </p>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
 
-<style>
-* {box-sizing:border-box}
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/ezpaint.jpg" height=300px width=300px />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Blender Add-on: ezPaint</h3>
+                        <p>
+                           Automatic weightpainting add-on for the open source Blender 3D modeling suite. 
+                           This allows converting mesh weights between armatures to easily port game rigs between engines. 
+                           It supports user-defined vertex group mappings. 
+                        </p>
+                        <a href="https://github.com/FallenLogic/ezPaint">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/cnu_maps.jpg" height=300px width=300px />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Android App: CNU Maps</h3>
+                        <p>
+                            CNU Maps is analogous to Google Maps for Christopher Newport University, 
+                            and was designed to make it easier for first-year students to navigate the campus. 
+                            This is implemented for the Android Mobile Operating System and was developed as a project for the CNU ACM chapter. 
+                        </p>
+                        <a href="https://www.appbrain.com/app/cnu-maps/com.cnuacm.helloworld">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
 
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/portable_n64.jpg" height=300px width=300px />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Electronics: Portable Nintendo 64</h3>
+                        <p>
+                            This is a modification of an existing N64 console to make it portable. 
+                            It contains a custom battery management solution and a microcontroller with custom code 
+                            to emulate some of the original gamepad functions. 
+                        </p>
+                        <!-- <a href="https://github.com/Artoriuz/glsl-joint-bilateral">View Project</a> -->
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>C</li>
+            <li>C++</li>
+            <li>Python</li>
+            <li>Atmel AVR</li>
+            <li>DevOps</li>
+            <li>3D Modeling</li>
+            <li>GitHub</li>
+            <li>Numpy</li>
+            <li>Equipment Automation</li>
+            <li>Linux</li>
+            <li>Internet of Things</li>
+            <li>Computer Architecture</li>
+            <li>Software Architecture</li>
+            <li>Embedded Systems</li>
+            <li>Networked Systems</li>
+            <li>Firmware Development</li>
+            <li>Software Development</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2025 Jack Wartell
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/fallenlogic" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/jack-m-wartell/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-</style>
-
-
-
-<script>
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    /* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-    this.classList.toggle("active");
-
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-} 
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction(input_item) {
-  document.getElementById(input_item).classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-
-document.getElementById("SoftwareOpen").click();
-
-
-function openMenu(evt, cityName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-
-let slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-} 
-
-</script>
-   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
-</html> 
+
+</html>
