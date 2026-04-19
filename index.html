@@ -6,14 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Portfolio</title>
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-	<link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -73,11 +75,15 @@
         <div class="container">
             <h2 class="heading">About Me</h2>
             <p>
-                I'm a software engineer with a strong background in embedded systems. I consider myself a lifelong learner!
+                I'm a software engineer with a strong background in embedded systems. I consider myself a lifelong
+                learner!
             </p><br>
             <p>
-                I have implemented software for flight tests and embedded systems for space navigation, and performed test equipment automation (including design and implementation of graphical interfaces). I have also conducted historiographic research!
-                I work for Psionic, Inc. - a startup in Hampton, VA, where we're developing next-generation LiDAR systems for GNSS-denied environments.
+                I have implemented software for flight tests and embedded systems for space navigation, and performed
+                test equipment automation (including design and implementation of graphical interfaces). I have also
+                conducted historiographic research!
+                I work for Psionic, Inc. - a startup in Hampton, VA, where we're developing next-generation LiDAR
+                systems for GNSS-denied environments.
             </p><br>
             <!-- <p>
                 *I am enrolled in Master of Science in Electrical and Computer Engineering from the University of Colorado Boulder, and hold a Bachelor of Science in Computer Science from Christopher Newport University.
@@ -91,18 +97,19 @@
         <div id="experience-timeline">
             <div data-date="Ongoing">
                 <h3>Psionic, Inc.</h3>
-                <h4>Software Engineer</h4>
-                <p>
-                    
-                 </p>
+                <div>
+                    <h4>Software Engineer</h4>
+                    <p>
+                    </p>
+                </div>
             </div>
 
             <div data-date="2023 – 2024">
                 <h3>Christopher Newport University</h3>
                 <h4>Research Apprentice</h4>
                 <p>
-                    
-                 </p>
+
+                </p>
             </div>
 
             <div data-date="2022">
@@ -110,7 +117,7 @@
                 <h4>Software Development Intern</h4>
                 <p>
 
-                 </p>
+                </p>
             </div>
         </div>
     </div>
@@ -118,10 +125,10 @@
 
     <div id="education">
         <h2 class="heading">Education</h2>
-        
+
         <!-- <div class="education-block">
             <h3>University of Colorado Boulder</h3>
-            <span class="education-date">2024 - </span>
+            <span class="education-date">2026 - </span>
             <h4>Master of Science in Electrical and Computer Engineering</h4>
             <h4>Concentration in Industrial Internet of Things</h4>
             <p>
@@ -136,14 +143,16 @@
             <span class="education-date">2020 - 2024</span>
             <h4>Bachelor of Science in Computer Science</h4>
             <h4>Minor in Leadership Studies</h4>
-             <p>
-                Undergraduate classes included digital logic design, applied artificial intelligence, operating systems, and cryptography.
-             </p><br>
-             <h4>Honors Program & President's Leadership Program</h4>
-             <p>
-                I was also a member of the Honors program, which allowed me to participate in undergraduate research, and the President's Leadership Program.
+            <p>
+                Undergraduate classes included digital logic design, applied artificial intelligence, operating systems,
+                and cryptography.
+            </p><br>
+            <h4>Honors Program & President's Leadership Program</h4>
+            <p>
+                I was also a member of the Honors program, which allowed me to participate in a range of undergraduate
+                research projects, and I was enrolled in the President's Leadership Program.
                 I was briefly the Vice Chair of my university's ACM chapter.
-             </p>
+            </p>
         </div>
         <!-- End .education-block -->
     </div>
@@ -160,13 +169,32 @@
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Blender Add-on: ezPaint</h3>
+                        <h3>Software: ezPaint Blender Add-on </h3>
                         <p>
-                           Automatic weightpainting add-on for the open source Blender 3D modeling suite. 
-                           This allows converting mesh weights between armatures to easily port game rigs between engines. 
-                           It supports user-defined vertex group mappings. 
+                            The ezPaint add-on for the open source Blender 3D modeling suite allows converting mesh
+                            weights between armatures to easily port game rigs between engines.
+                            It supports user-defined vertex group mappings.
                         </p>
                         <a href="https://github.com/FallenLogic/ezPaint">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/portable_rpi.jpg" height=300px width=300px />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Electronics: Portable RPi Emulator</h3>
+                        <p>
+                            The portable contains a Raspberry Pi SBC, integrated keyboard emulator for gamepad
+                            functions, and a battery charging/balancing system using COTS parts. It features a 480p
+                            analog screen that taps directly into composite output and is housed in a modified Polycase
+                            enclosure.
+                        </p>
+                        <!-- <a href="https://github.com/Artoriuz/glsl-joint-bilateral">View Project</a> -->
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -178,11 +206,12 @@
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
-                        <h3>Android App: CNU Maps</h3>
+                        <h3>Software: CNU Maps Android App</h3>
                         <p>
-                            CNU Maps is analogous to Google Maps for Christopher Newport University, 
-                            and was designed to make it easier for first-year students to navigate the campus. 
-                            This is implemented for the Android Mobile Operating System and was developed as a project for the CNU ACM chapter. 
+                            CNU Maps is analogous to Google Maps for Christopher Newport University,
+                            and was designed to make it easier for first-year students to navigate the campus.
+                            This is implemented for the Android Mobile Operating System and was developed as a project
+                            for the CNU ACM chapter.
                         </p>
                         <a href="https://www.appbrain.com/app/cnu-maps/com.cnuacm.helloworld">View Project</a>
                     </div>
@@ -198,15 +227,17 @@
                     <div class="project-info">
                         <h3>Electronics: Portable Nintendo 64</h3>
                         <p>
-                            This is a modification of an existing N64 console to make it portable. 
-                            It contains a custom battery management solution and a microcontroller with custom code 
-                            to emulate some of the original gamepad functions. 
+                            The portable N64 is a modification of an existing N64 console to make it portable.
+                            It contains a custom battery management solution and a microcontroller with custom code
+                            to emulate some of the original gamepad functions. The screen bezel and speaker cover were
+                            designed in Blender and 3D printed.
                         </p>
                         <!-- <a href="https://github.com/Artoriuz/glsl-joint-bilateral">View Project</a> -->
                     </div>
                     <!-- End .project-info -->
                 </div>
                 <!-- End .project -->
+
             </div>
         </div>
     </div>
@@ -241,7 +272,7 @@
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2025 Jack Wartell
+                        Copyright &copy; 2025-2026 Jack Wartell
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -252,10 +283,12 @@
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a href="https://github.com/fallenlogic" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a href="https://github.com/fallenlogic" target="_blank"><i class="fa fa-github"
+                                    aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/jack-m-wartell/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://www.linkedin.com/in/jack-m-wartell/" target="_blank"><i
+                                    class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
